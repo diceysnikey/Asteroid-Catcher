@@ -1,0 +1,33 @@
+extends Node2D
+
+func _show_menu() -> void:
+	var mainMenuInstance = preload("res://scenes/menu.tscn").instantiate()
+	add_child(mainMenuInstance)
+
+func _spawn_spawner() -> void:
+	var spawnerInstance = preload("res://scenes/spawner.tscn").instantiate()
+	add_child(spawnerInstance)
+
+func _game_over() -> void:
+	var gameOverInstance = preload("res://scenes/game_over_screen.tscn").instantiate()
+	add_child(gameOverInstance)
+	get_tree().paused = true
+	pass
+	
+func _exit_game() -> void:
+	get_tree().quit()
+	
+func _restart_game() -> void:
+	for child in get_children():
+		remove_child(child)
+		child.queue_free()
+		
+	get_tree().paused = false
+	_show_menu()
+	
+func _ready() -> void:
+	Signalbus.playbutton_pressed.connect(_spawn_spawner)
+	Signalbus.game_over.connect(_game_over)
+	Signalbus.exit_game.connect(_exit_game)
+	Signalbus.restart_game.connect(_restart_game)
+	_show_menu()

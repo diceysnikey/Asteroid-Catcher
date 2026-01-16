@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bowg0pgho8ejj"]
+
+[ext_resource type="Script" uid="uid://32bsd1xed06k" path="res://scripts/scoreboard.gd" id="1_ucmtr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rarhs"]
+font_size = 35
+
+[node name="Scoreboard" type="CanvasLayer"]
+script = ExtResource("1_ucmtr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 509.0
+offset_right = 641.0
+offset_bottom = 49.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_rarhs")

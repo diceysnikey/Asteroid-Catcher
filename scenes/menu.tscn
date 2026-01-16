@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://dblhtpse82uii"]
+
+[ext_resource type="Script" uid="uid://ctoeafro02sgl" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
+font_size = 57
+
+[sub_resource type="LabelSettings" id="LabelSettings_con2f"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_yqeox"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhnvy"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_yqeox")
+
+[node name="Title" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Title"]
+offset_left = 256.0
+offset_top = 24.0
+offset_right = 896.0
+offset_bottom = 216.0
+text = "Asteroid Catcher"
+label_settings = SubResource("LabelSettings_vjb58")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="PlayButton"]
+offset_left = 448.0
+offset_top = 320.0
+offset_right = 704.0
+offset_bottom = 384.0
+
+[node name="Label" type="Label" parent="PlayButton"]
+offset_left = 448.0
+offset_top = 320.0
+offset_right = 704.0
+offset_bottom = 384.0
+text = "Play"
+label_settings = SubResource("LabelSettings_con2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreText" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HighScoreText"]
+offset_left = 448.0
+offset_top = 200.0
+offset_right = 704.0
+offset_bottom = 248.0
+text = "Highscore: "
+label_settings = SubResource("LabelSettings_yqeox")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="ExitButton"]
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 704.0
+offset_bottom = 512.0
+
+[node name="Label" type="Label" parent="ExitButton"]
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 704.0
+offset_bottom = 512.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_con2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetHighscore" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="ResetHighscore"]
+offset_left = 976.0
+offset_top = 600.0
+offset_right = 1128.0
+offset_bottom = 640.0
+flat = true
+
+[node name="Label" type="Label" parent="ResetHighscore"]
+offset_left = 960.0
+offset_top = 592.0
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "Reset Highscore"
+label_settings = SubResource("LabelSettings_mhnvy")
+horizontal_alignment = 1
+vertical_alignment = 1

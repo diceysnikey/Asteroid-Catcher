@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://p85fqpfkcqw"]
+
+[ext_resource type="Script" uid="uid://dwiw58e2dmh3" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+[ext_resource type="Texture2D" uid="uid://co55k4t5pkubb" path="res://white.png" id="2_61w2s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61w2s"]
+font_size = 58
+
+[sub_resource type="LabelSettings" id="LabelSettings_jw6e5"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_iwahs"]
+font_size = 25
+
+[node name="GameOverScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwahs")
+
+[node name="GameOverText" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="GameOverText"]
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 256.0
+text = "Game Over!"
+label_settings = SubResource("LabelSettings_61w2s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="RestartButton"]
+offset_left = 144.0
+offset_top = 360.0
+offset_right = 304.0
+offset_bottom = 416.0
+
+[node name="Label" type="Label" parent="RestartButton"]
+offset_left = 64.0
+offset_top = 336.0
+offset_right = 384.0
+offset_bottom = 432.0
+text = "Restart"
+label_settings = SubResource("LabelSettings_jw6e5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="ExitButton"]
+offset_left = 848.0
+offset_top = 360.0
+offset_right = 1008.0
+offset_bottom = 416.0
+
+[node name="Label" type="Label" parent="ExitButton"]
+offset_left = 768.0
+offset_top = 336.0
+offset_right = 1088.0
+offset_bottom = 432.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_jw6e5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighscoreText" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HighscoreText"]
+offset_left = 448.0
+offset_top = 368.0
+offset_right = 704.0
+offset_bottom = 408.0
+label_settings = SubResource("LabelSettings_iwahs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.24705882)
+scale = Vector2(1152, 648)
+texture = ExtResource("2_61w2s")

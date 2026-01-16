@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbafy4hlk1g88"]
+
+[ext_resource type="Script" uid="uid://dcmbc7kgluc5f" path="res://scripts/difficulty_text.gd" id="1_wsytk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8s4vu"]
+font_size = 35
+
+[node name="DifficultyText" type="CanvasLayer"]
+script = ExtResource("1_wsytk")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 132.0
+offset_bottom = 49.0
+text = "Difficulty: 1"
+label_settings = SubResource("LabelSettings_8s4vu")
