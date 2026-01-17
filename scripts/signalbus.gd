@@ -5,6 +5,7 @@ extends Node
 signal trigger_mouth(asteroid)
 signal check_trigger(asteroid)
 signal eat_asteroid(asteroid)
+signal return_asteroid_to_pool(asteroid)
 signal game_over()
 signal scored_point(newScore: int)
 

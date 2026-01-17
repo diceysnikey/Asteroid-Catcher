@@ -12,7 +12,6 @@ func _game_over() -> void:
 	var gameOverInstance = preload("res://scenes/game_over_screen.tscn").instantiate()
 	add_child(gameOverInstance)
 	get_tree().paused = true
-	pass
 	
 func _exit_game() -> void:
 	get_tree().quit()

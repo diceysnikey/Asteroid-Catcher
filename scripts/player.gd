@@ -17,12 +17,12 @@ func _on_innerCollision_entered(area: Area2D) -> void:
 func _on_badCollision_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("BadAsteroids"):
 		Signalbus.game_over.emit()
-	pass
-func _eat_asteroid(asteroid: Node2D) -> void:
+
+func _eat_asteroid(asteroid) -> void:
 	$AnimatedSprite2D.play("closed")
 	score += 1
 	Signalbus.scored_point.emit(score)
-	asteroid.queue_free()	
+	Signalbus.return_asteroid_to_pool.emit(asteroid)
 	
 	
 func _ready() -> void:

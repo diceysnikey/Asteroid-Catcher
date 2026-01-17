@@ -3,6 +3,7 @@ extends Node2D
 const speed = 200
 const outOfViewPadding = 32
 var triggeredMouth = false
+var toggleProcess = false
 
 func _ChangeMouthTrigger(asteroid: Node2D) -> void:
 	if asteroid == self && triggeredMouth == false:
@@ -20,7 +21,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	position.x += (speed * ElapsedTimer.elapsedTime) * delta
-	
-	if position.x > (get_viewport_rect().size.x + outOfViewPadding):
-		queue_free()
+	if toggleProcess:
+		position.x += (speed * ElapsedTimer.elapsedTime) * delta
+		if position.x > (get_viewport_rect().size.x + outOfViewPadding):
+			Signalbus.return_asteroid_to_pool.emit(self)
