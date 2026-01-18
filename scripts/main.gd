@@ -1,5 +1,7 @@
 extends Node2D
 
+var toggledFullscreen = false
+
 func _show_menu() -> void:
 	var mainMenuInstance = preload("res://scenes/menu.tscn").instantiate()
 	add_child(mainMenuInstance)
@@ -30,3 +32,12 @@ func _ready() -> void:
 	Signalbus.exit_game.connect(_exit_game)
 	Signalbus.restart_game.connect(_restart_game)
 	_show_menu()
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Fullscreen") && toggledFullscreen == false:
+		toggledFullscreen = true
+		DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN)
+		print(DisplayServer.window_get_mode())
+	elif Input.is_action_just_pressed("Fullscreen"):
+		toggledFullscreen = false
+		DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_WINDOWED)

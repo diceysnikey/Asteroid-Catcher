@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
-const speed = 500
-const accel = speed * 8
+const speed = 250
+const accel = speed * 4
 var score: int = 0
-
 
 func _on_outerCollision_entered(area: Area2D) -> void:
 	$AnimatedSprite2D.play("open")
@@ -30,15 +29,23 @@ func _ready() -> void:
 	$InnerCollision.area_entered.connect(_on_innerCollision_entered)
 	$BadCollision.area_entered.connect(_on_badCollision_entered)
 	Signalbus.eat_asteroid.connect(_eat_asteroid)
+	Signalbus.start_boost_process.emit()
 	
+	$CanvasLayer/ProgressBar.top_level = true
 	$Walls.top_level = true
 	position.y = get_viewport_rect().size.y / 2
 	position.x = get_viewport_rect().size.x - ($WallCollider.shape.get_rect().size.x / 2)
 	
 func _physics_process(delta: float) -> void:
-	var distance = get_global_mouse_position().y - position.y
-	var targetVelocity = Vector2.ZERO
-	targetVelocity.y = clamp(distance, -speed, speed)
+	var distance = Vector2.ZERO
+	if Input.is_action_pressed("Up"):
+		distance.y = -1
+	elif Input.is_action_pressed("Down"):
+		distance.y = 1
+		
+	if Input.is_action_pressed("Boost") && BoostSystem.boostActive:
+		distance *= BoostSystem.boostMultiplier
 	
-	velocity = velocity.move_toward(targetVelocity, accel * delta)
+	velocity = velocity.move_toward(distance * speed, accel * delta)
 	move_and_slide()
+	$CanvasLayer/ProgressBar.value = BoostSystem.boostCapacity

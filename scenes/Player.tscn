@@ -83,3 +83,11 @@ shape = SubResource("RectangleShape2D_khinc")
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_3li8b")
 debug_color = Color(0.92333925, 5.063355e-05, 0.6860589, 0.41960785)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 372.0
+offset_top = 624.0
+offset_right = 765.0
+offset_bottom = 648.0
