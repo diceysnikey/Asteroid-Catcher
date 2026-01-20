@@ -12,6 +12,8 @@ func _instantiate_game() -> void:
 	add_child(scoreboardInstance)
 	var difficultyInstance = preload("res://scenes/difficulty_text.tscn").instantiate()
 	add_child(difficultyInstance)
+	var backgroundInstance = preload("res://scenes/background.tscn").instantiate()
+	add_child(backgroundInstance)
 	
 func _instantiate_asteroid_pool() -> void:
 	for i in range(5):

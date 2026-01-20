@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0bjntslhmku0"]
+
+[ext_resource type="Texture2D" uid="uid://co55k4t5pkubb" path="res://textures_and_audios/white.png" id="1_bkp1e"]
+[ext_resource type="Texture2D" uid="uid://bkkya3xhlyg2i" path="res://textures_and_audios/stars1.png" id="1_cbsqf"]
+[ext_resource type="Script" uid="uid://c6r41yen6cq4r" path="res://scripts/background.gd" id="1_wisxt"]
+[ext_resource type="Texture2D" uid="uid://cb6itinc38rxc" path="res://textures_and_audios/stars2.png" id="2_wisxt"]
+[ext_resource type="Texture2D" uid="uid://dhgkitrqxytji" path="res://textures_and_audios/stars3.png" id="3_wax1t"]
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_wisxt")
+
+[node name="farStars" type="Parallax2D" parent="."]
+z_index = -5
+repeat_size = Vector2(2304, 0)
+
+[node name="TextureRect" type="TextureRect" parent="farStars"]
+offset_right = 2263.0
+offset_bottom = 648.0
+texture = ExtResource("1_cbsqf")
+stretch_mode = 1
+
+[node name="midStars" type="Parallax2D" parent="."]
+z_index = -4
+repeat_size = Vector2(2304, 0)
+
+[node name="TextureRect" type="TextureRect" parent="midStars"]
+offset_right = 2271.0
+offset_bottom = 652.0
+texture = ExtResource("2_wisxt")
+stretch_mode = 1
+
+[node name="closeStars" type="Parallax2D" parent="."]
+z_index = -3
+repeat_size = Vector2(2304, 0)
+
+[node name="TextureRect" type="TextureRect" parent="closeStars"]
+offset_right = 2278.0
+offset_bottom = 660.0
+texture = ExtResource("3_wax1t")
+stretch_mode = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -6
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+scale = Vector2(2273, 655)
+texture = ExtResource("1_bkp1e")

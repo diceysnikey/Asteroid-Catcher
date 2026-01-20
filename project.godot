@@ -19,7 +19,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 Signalbus="*res://scripts/signalbus.gd"
 HighscoreManager="*res://scripts/highscore_manager.gd"
 ElapsedTimer="*res://scripts/elapsed_timer.gd"
-Test="*res://test.gd"
+Test="*res://scripts/test.gd"
 BoostSystem="*res://scripts/boost_system.gd"
 
 [display]
@@ -61,4 +61,5 @@ Boost={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
 2d/snap/snap_2d_transforms_to_pixel=true

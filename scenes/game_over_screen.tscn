@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://p85fqpfkcqw"]
 
 [ext_resource type="Script" uid="uid://dwiw58e2dmh3" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
-[ext_resource type="Texture2D" uid="uid://co55k4t5pkubb" path="res://white.png" id="2_61w2s"]
+[ext_resource type="Texture2D" uid="uid://co55k4t5pkubb" path="res://textures_and_audios/white.png" id="2_61w2s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_61w2s"]
 font_size = 58
