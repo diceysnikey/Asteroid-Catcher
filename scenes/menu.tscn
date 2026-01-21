@@ -1,46 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://dblhtpse82uii"]
+[gd_scene load_steps=6 format=3 uid="uid://dblhtpse82uii"]
 
 [ext_resource type="Script" uid="uid://ctoeafro02sgl" path="res://scripts/menu.gd" id="1_yqeox"]
-[ext_resource type="FontFile" uid="uid://dc5qmu3hkmfvw" path="res://textures_and_audios/MR ROBOT.ttf" id="2_vjb58"]
-[ext_resource type="Theme" uid="uid://rlfk3fkgtexq" path="res://scenes/green_button.tres" id="3_mhnvy"]
-[ext_resource type="Theme" uid="uid://cupvrjqols2aq" path="res://scenes/red_button.tres" id="4_4ytvr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
-font = ExtResource("2_vjb58")
-font_size = 60
-font_color = Color(0.32941177, 0.75686276, 0.49019608, 1)
-outline_size = 10
-outline_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
-shadow_size = 30
-shadow_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
-shadow_offset = Vector2(4, 4)
-
-[sub_resource type="LabelSettings" id="LabelSettings_4ytvr"]
-font = ExtResource("2_vjb58")
-font_size = 35
-font_color = Color(0.32941177, 0.75686276, 0.49019608, 1)
-outline_size = 15
-outline_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_yqeox"]
-font = ExtResource("2_vjb58")
-font_size = 25
-font_color = Color(0.32941177, 0.75686276, 0.49019608, 1)
-outline_size = 10
-outline_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
+font_size = 57
 
 [sub_resource type="LabelSettings" id="LabelSettings_con2f"]
-font = ExtResource("2_vjb58")
 font_size = 35
-font_color = Color(0.87058824, 0.4862745, 0.4392157, 1)
-outline_size = 15
-outline_color = Color(0.50980395, 0.18039216, 0.14117648, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yqeox"]
+font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_mhnvy"]
-font = ExtResource("2_vjb58")
-font_color = Color(0.87058824, 0.4862745, 0.4392157, 1)
-outline_size = 6
-outline_color = Color(0.50980395, 0.18039216, 0.14117648, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -68,7 +39,6 @@ offset_left = 448.0
 offset_top = 320.0
 offset_right = 704.0
 offset_bottom = 384.0
-theme = ExtResource("3_mhnvy")
 
 [node name="Label" type="Label" parent="PlayButton"]
 offset_left = 448.0
@@ -76,7 +46,7 @@ offset_top = 320.0
 offset_right = 704.0
 offset_bottom = 384.0
 text = "Play"
-label_settings = SubResource("LabelSettings_4ytvr")
+label_settings = SubResource("LabelSettings_con2f")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -99,7 +69,6 @@ offset_left = 448.0
 offset_top = 448.0
 offset_right = 704.0
 offset_bottom = 512.0
-theme = ExtResource("4_4ytvr")
 
 [node name="Label" type="Label" parent="ExitButton"]
 offset_left = 448.0

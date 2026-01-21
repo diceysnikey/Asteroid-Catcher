@@ -13,13 +13,13 @@ config_version=5
 config/name="Asteroid Catcher"
 run/main_scene="uid://d2wgydtrq0adv"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="uid://kbdjwlvoouje"
 
 [autoload]
 
 Signalbus="*res://scripts/signalbus.gd"
 HighscoreManager="*res://scripts/highscore_manager.gd"
 ElapsedTimer="*res://scripts/elapsed_timer.gd"
+Test="*res://scripts/test.gd"
 BoostSystem="*res://scripts/boost_system.gd"
 
 [display]

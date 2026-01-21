@@ -5,6 +5,6 @@ extends Node2D
 @onready var close = $closeStars
 
 func _process(delta: float) -> void:
-	far.scroll_offset.x -= (15 * ElapsedTimer.elapsedTime) * delta
+	far.scroll_offset.x -= (50 * ElapsedTimer.elapsedTime) * delta
 	mid.scroll_offset.x -= (30 * ElapsedTimer.elapsedTime) * delta
-	close.scroll_offset.x -= (50 * ElapsedTimer.elapsedTime) * delta
+	close.scroll_offset.x -= (15 * ElapsedTimer.elapsedTime) * delta

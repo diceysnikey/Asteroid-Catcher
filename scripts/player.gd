@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 350
+const speed = 250
 const accel = speed * 4
 var score: int = 0
 
