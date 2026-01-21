@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhgkitrqxytji" path="res://textures_and_audios/stars3.png" id="3_wax1t"]
 
 [node name="Background" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_wisxt")
 
 [node name="farStars" type="Parallax2D" parent="."]
