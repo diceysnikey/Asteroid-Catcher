@@ -1,7 +1,7 @@
 extends Node
 
 var rawTime = 0.80
-var elapsedTime:float
+var elapsedTime = 1.0
 var timerTriggered = false
 
 func _trigger_timer() -> void:
