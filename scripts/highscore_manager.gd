@@ -20,6 +20,7 @@ func _save_highscore() -> void:
 	pass
 	
 func _reset_highscore() -> void:
+	Signalbus.play_select_sound.emit()
 	highscore = 0
 	_save_highscore()
 

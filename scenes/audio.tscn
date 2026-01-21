@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddod78ylbup4"]
+
+[ext_resource type="Script" uid="uid://blmopwogolsc2" path="res://scripts/audio.gd" id="1_dl6it"]
+[ext_resource type="AudioStream" uid="uid://c8npykcqctv0s" path="res://textures_and_audios/Eat1.wav" id="2_8kkbo"]
+[ext_resource type="AudioStream" uid="uid://cq08mpwfi3c4i" path="res://textures_and_audios/Eat2.wav" id="3_3g2y6"]
+[ext_resource type="AudioStream" uid="uid://cis6iur1bu2tm" path="res://textures_and_audios/Eat3.wav" id="4_lpqkh"]
+[ext_resource type="AudioStream" uid="uid://gtr71jtmyfvq" path="res://textures_and_audios/Death.wav" id="5_lymfh"]
+[ext_resource type="AudioStream" uid="uid://olbn2hgdrshx" path="res://textures_and_audios/Select.wav" id="6_p5uep"]
+
+[node name="Audio" type="Node"]
+process_mode = 3
+script = ExtResource("1_dl6it")
+
+[node name="Eat1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8kkbo")
+
+[node name="Eat2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3g2y6")
+
+[node name="Eat3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lpqkh")
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lymfh")
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p5uep")

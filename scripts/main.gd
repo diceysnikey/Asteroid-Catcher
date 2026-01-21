@@ -7,6 +7,7 @@ func _show_menu() -> void:
 	add_child(mainMenuInstance)
 
 func _spawn_spawner() -> void:
+	Signalbus.play_select_sound.emit()
 	var spawnerInstance = preload("res://scenes/spawner.tscn").instantiate()
 	add_child(spawnerInstance)
 
@@ -19,6 +20,7 @@ func _exit_game() -> void:
 	get_tree().quit()
 	
 func _restart_game() -> void:
+	Signalbus.play_select_sound.emit()
 	for child in get_children():
 		remove_child(child)
 		child.queue_free()

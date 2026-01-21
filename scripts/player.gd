@@ -15,9 +15,11 @@ func _on_innerCollision_entered(area: Area2D) -> void:
 	
 func _on_badCollision_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("BadAsteroids"):
+		Signalbus.play_death_sound.emit()
 		Signalbus.game_over.emit()
 
 func _eat_asteroid(asteroid) -> void:
+	Signalbus.play_eat_sound.emit()
 	$AnimatedSprite2D.play("closed")
 	score += 1
 	Signalbus.scored_point.emit(score)

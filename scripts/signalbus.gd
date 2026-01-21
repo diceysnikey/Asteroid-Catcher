@@ -15,6 +15,11 @@ signal reset_highscore()
 signal exit_game()
 signal restart_game()
 
+# Audio
+signal play_eat_sound()
+signal play_death_sound()
+signal play_select_sound()
+
 # Misc
 signal start_spawn_timer()
 signal start_elapsed_timer()

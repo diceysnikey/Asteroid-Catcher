@@ -21,6 +21,7 @@ Signalbus="*res://scripts/signalbus.gd"
 HighscoreManager="*res://scripts/highscore_manager.gd"
 ElapsedTimer="*res://scripts/elapsed_timer.gd"
 BoostSystem="*res://scripts/boost_system.gd"
+Audio="*res://scenes/audio.tscn"
 
 [display]
 
