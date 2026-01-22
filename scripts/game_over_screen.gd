@@ -4,6 +4,7 @@ func _exit_game() -> void:
 	Signalbus.exit_game.emit()
 
 func _restart_game() -> void:
+	Signalbus.play_select_sound.emit()
 	Signalbus.restart_game.emit()
 
 func _ready() -> void:

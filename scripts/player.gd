@@ -5,9 +5,10 @@ const accel = speed * 4
 var score: int = 0
 
 func _on_outerCollision_entered(area: Area2D) -> void:
-	$AnimatedSprite2D.play("open")
 	var asteroid = area.get_parent()
-	Signalbus.trigger_mouth.emit(asteroid)
+	if not asteroid.is_in_group("BadAsteroids") and not asteroid.is_in_group("BadTutorial"):
+		$AnimatedSprite2D.play("open")
+		Signalbus.trigger_mouth.emit(asteroid)
 
 func _on_innerCollision_entered(area: Area2D) -> void:
 	var asteroid = area.get_parent()
@@ -23,9 +24,11 @@ func _eat_asteroid(asteroid) -> void:
 	$AnimatedSprite2D.play("closed")
 	score += 1
 	Signalbus.scored_point.emit(score)
-	Signalbus.return_asteroid_to_pool.emit(asteroid)
-	
-	
+	if not asteroid.is_in_group("Tutorial"):
+		Signalbus.return_asteroid_to_pool.emit(asteroid)
+	else:
+		asteroid.queue_free()
+		
 func _ready() -> void:
 	$OuterCollision.area_entered.connect(_on_outerCollision_entered)
 	$InnerCollision.area_entered.connect(_on_innerCollision_entered)

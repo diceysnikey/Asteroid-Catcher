@@ -8,6 +8,10 @@ func _start_game() -> void:
 		
 func _exit_game() -> void:
 	Signalbus.exit_game.emit()
+	
+func _enter_tutorial() -> void:
+	Signalbus.enter_tutorial.emit()
+	queue_free()
 
 func _reset_highscore() -> void:
 	Signalbus.reset_highscore.emit()
@@ -22,4 +26,5 @@ func _ready() -> void:
 	$PlayButton/Button.pressed.connect(_start_game)
 	$ExitButton/Button.pressed.connect(_exit_game)
 	$ResetHighscore/Button.pressed.connect(_reset_highscore)
+	$TutorialButton/Button.pressed.connect(_enter_tutorial)
 	_change_highscore_label()

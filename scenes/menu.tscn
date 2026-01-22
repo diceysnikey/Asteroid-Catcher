@@ -65,16 +65,16 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="PlayButton"]
 offset_left = 448.0
-offset_top = 320.0
+offset_top = 256.0
 offset_right = 704.0
-offset_bottom = 384.0
+offset_bottom = 320.0
 theme = ExtResource("3_mhnvy")
 
 [node name="Label" type="Label" parent="PlayButton"]
 offset_left = 448.0
-offset_top = 320.0
+offset_top = 256.0
 offset_right = 704.0
-offset_bottom = 384.0
+offset_bottom = 320.0
 text = "Play"
 label_settings = SubResource("LabelSettings_4ytvr")
 horizontal_alignment = 1
@@ -96,16 +96,16 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="ExitButton"]
 offset_left = 448.0
-offset_top = 448.0
+offset_top = 512.0
 offset_right = 704.0
-offset_bottom = 512.0
+offset_bottom = 576.0
 theme = ExtResource("4_4ytvr")
 
 [node name="Label" type="Label" parent="ExitButton"]
 offset_left = 448.0
-offset_top = 448.0
+offset_top = 512.0
 offset_right = 704.0
-offset_bottom = 512.0
+offset_bottom = 576.0
 text = "Exit"
 label_settings = SubResource("LabelSettings_con2f")
 horizontal_alignment = 1
@@ -127,5 +127,24 @@ offset_right = 1152.0
 offset_bottom = 648.0
 text = "Reset Highscore"
 label_settings = SubResource("LabelSettings_mhnvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialButton" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="TutorialButton"]
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 704.0
+offset_bottom = 448.0
+theme = ExtResource("3_mhnvy")
+
+[node name="Label" type="Label" parent="TutorialButton"]
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 704.0
+offset_bottom = 448.0
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_4ytvr")
 horizontal_alignment = 1
 vertical_alignment = 1

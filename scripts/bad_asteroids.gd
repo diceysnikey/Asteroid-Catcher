@@ -1,6 +1,6 @@
 extends Node2D
 
-var speed
+var speed:int
 const outOfViewPadding = 32
 var triggeredMouth = false
 var toggleProcess = false

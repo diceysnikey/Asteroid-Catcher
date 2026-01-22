@@ -19,6 +19,14 @@ signal restart_game()
 signal play_eat_sound()
 signal play_death_sound()
 signal play_select_sound()
+signal play_idle_music()
+signal play_start_music()
+
+# Tutorial
+signal enter_tutorial()
+signal tutorial_asteroid_collected()
+signal tutorial_asteroid_dodged()
+signal tutorial_dodge_failed()
 
 # Misc
 signal start_spawn_timer()
