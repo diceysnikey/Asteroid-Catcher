@@ -36,7 +36,7 @@ func _dodge_success() -> void:
 	$GoodJobText.visible = true
 	$ReturningtoMenuText.visible = true
 	await get_tree().create_timer(3).timeout
-	Signalbus.restart_game.emit()
+	Signalbus.back_to_menu.emit()
 	
 func _ready() -> void:
 	var playerInstance = preload("res://scenes/Player.tscn").instantiate()

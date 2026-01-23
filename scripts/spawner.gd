@@ -35,6 +35,7 @@ func _spawn_asteroid():
 		asteroid.position = SpawnPosition
 		asteroid.visible = true
 		asteroid.toggleProcess = true
+		asteroid.triggeredMouth = false
 		break
 
 func _spawn_bad_asteroid():

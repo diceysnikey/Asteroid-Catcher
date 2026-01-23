@@ -21,7 +21,7 @@ func _game_over() -> void:
 func _exit_game() -> void:
 	get_tree().quit()
 	
-func _restart_game() -> void:
+func _back_to_menu() -> void:
 	for child in get_children():
 		remove_child(child)
 		child.queue_free()
@@ -37,7 +37,7 @@ func _ready() -> void:
 	Signalbus.playbutton_pressed.connect(_spawn_spawner)
 	Signalbus.game_over.connect(_game_over)
 	Signalbus.exit_game.connect(_exit_game)
-	Signalbus.restart_game.connect(_restart_game)
+	Signalbus.back_to_menu.connect(_back_to_menu)
 	Signalbus.enter_tutorial.connect(_enter_tutorial)
 	_show_menu()
 

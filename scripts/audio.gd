@@ -1,6 +1,7 @@
 extends Node
 
 var token = 0
+var musicOn = true
 
 func _play_eat_sound() -> void:
 	match token:
@@ -21,15 +22,25 @@ func _play_select_sound() -> void:
 func _play_idle_music() -> void:
 	$Asteroid_Start.stop()
 	$Asteroid_Loop.stop()
-	if not $Asteroid_Idle.playing:
+	if not $Asteroid_Idle.playing and musicOn:
 		$Asteroid_Idle.play()
 	
 func _play_start_music() -> void:
 	$Asteroid_Idle.stop()
-	$Asteroid_Start.play()
+	if musicOn:
+		$Asteroid_Start.play()
 	
 func _play_main_music() -> void:
-	$Asteroid_Loop.play()
+	if musicOn:
+		$Asteroid_Loop.play()
+	
+func _toggle_music() -> void:
+	if $Asteroid_Idle.playing:
+		$Asteroid_Idle.stop()
+		musicOn = false
+	else:
+		$Asteroid_Idle.play()
+		musicOn = true
 
 func _ready() -> void:
 	Signalbus.play_eat_sound.connect(_play_eat_sound)
@@ -38,4 +49,5 @@ func _ready() -> void:
 	Signalbus.play_idle_music.connect(_play_idle_music)
 	Signalbus.play_start_music.connect(_play_start_music)
 	Signalbus.game_over.connect(_play_idle_music)
+	Signalbus.toggle_music.connect(_toggle_music)
 	$Asteroid_Start.finished.connect(_play_main_music)

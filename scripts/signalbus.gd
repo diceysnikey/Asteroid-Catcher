@@ -13,8 +13,9 @@ signal scored_point(newScore: int)
 signal playbutton_pressed()
 signal reset_highscore()
 signal exit_game()
-signal restart_game()
+signal back_to_menu()
 signal toggle_blindness()
+signal toggle_music()
 
 # Audio
 signal play_eat_sound()

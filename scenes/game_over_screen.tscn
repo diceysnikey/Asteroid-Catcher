@@ -73,21 +73,21 @@ self_modulate = Color(0.32941177, 0.75686276, 0.49019608, 0.47058824)
 scale = Vector2(1152, 648)
 texture = ExtResource("2_61w2s")
 
-[node name="RestartButton" type="CanvasLayer" parent="."]
+[node name="MenuButton" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="RestartButton"]
+[node name="Button" type="Button" parent="MenuButton"]
 offset_left = 104.0
 offset_top = 352.0
 offset_right = 360.0
 offset_bottom = 416.0
 theme = ExtResource("4_xx0b3")
 
-[node name="Label" type="Label" parent="RestartButton"]
+[node name="Label" type="Label" parent="MenuButton"]
 offset_left = 104.0
 offset_top = 352.0
 offset_right = 360.0
 offset_bottom = 416.0
-text = "Restart"
+text = "Main menu"
 label_settings = SubResource("LabelSettings_nh6my")
 horizontal_alignment = 1
 vertical_alignment = 1

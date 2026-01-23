@@ -184,3 +184,28 @@ offset_top = 600.0
 offset_right = 200.0
 offset_bottom = 632.0
 color = Color(0.50980395, 0.18039216, 0.14117648, 0.47058824)
+
+[node name="MuteMusicToggle" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="MuteMusicToggle"]
+offset_top = 536.0
+offset_right = 168.0
+offset_bottom = 568.0
+theme = SubResource("Theme_4ytvr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MuteMusicToggle"]
+offset_top = 520.0
+offset_right = 168.0
+offset_bottom = 584.0
+text = "Music"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MuteMusicToggle"]
+offset_left = 168.0
+offset_top = 536.0
+offset_right = 200.0
+offset_bottom = 568.0
+color = Color(0.50980395, 0.18039216, 0.14117648, 0.47058824)
