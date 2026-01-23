@@ -20,6 +20,13 @@ func _reset_highscore() -> void:
 func _change_highscore_label() -> void:
 	$HighScoreText/Label.text = ("Highscore: " + str(HighscoreManager.highscore))
 	
+func _toggle_color_blindness() -> void:
+	Signalbus.toggle_blindness.emit()
+	if BlindnessToggle.colorBlindness:
+		$ColorBlindnessToggle/ColorRect.color = Color.from_rgba8(84, 193, 125, 120)
+	else:
+		$ColorBlindnessToggle/ColorRect.color = Color.from_rgba8(130, 46, 36, 120)		
+	
 func _ready() -> void:
 	var backgroundInstance = preload("res://scenes/background.tscn").instantiate()
 	add_child(backgroundInstance)
@@ -27,4 +34,5 @@ func _ready() -> void:
 	$ExitButton/Button.pressed.connect(_exit_game)
 	$ResetHighscore/Button.pressed.connect(_reset_highscore)
 	$TutorialButton/Button.pressed.connect(_enter_tutorial)
+	$ColorBlindnessToggle/Button.pressed.connect(_toggle_color_blindness)
 	_change_highscore_label()

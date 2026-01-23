@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dblhtpse82uii"]
+[gd_scene load_steps=13 format=3 uid="uid://dblhtpse82uii"]
 
 [ext_resource type="Script" uid="uid://ctoeafro02sgl" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="FontFile" uid="uid://dc5qmu3hkmfvw" path="res://textures_and_audios/MR ROBOT.ttf" id="2_vjb58"]
@@ -41,6 +41,18 @@ font = ExtResource("2_vjb58")
 font_color = Color(0.87058824, 0.4862745, 0.4392157, 1)
 outline_size = 6
 outline_color = Color(0.50980395, 0.18039216, 0.14117648, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.07450981, 0.21568628, 0.1254902, 0.47058824)
+
+[sub_resource type="Theme" id="Theme_4ytvr"]
+Button/styles/normal = SubResource("StyleBoxFlat_mhnvy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3eks"]
+font = ExtResource("2_vjb58")
+font_color = Color(0.32941177, 0.75686276, 0.49019608, 1)
+outline_size = 6
+outline_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -148,3 +160,27 @@ text = "Tutorial"
 label_settings = SubResource("LabelSettings_4ytvr")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ColorBlindnessToggle" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="ColorBlindnessToggle"]
+offset_top = 600.0
+offset_right = 168.0
+offset_bottom = 632.0
+theme = SubResource("Theme_4ytvr")
+
+[node name="Label" type="Label" parent="ColorBlindnessToggle"]
+offset_top = 584.0
+offset_right = 168.0
+offset_bottom = 648.0
+text = "Color Blindess"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ColorBlindnessToggle"]
+offset_left = 168.0
+offset_top = 600.0
+offset_right = 200.0
+offset_bottom = 632.0
+color = Color(0.50980395, 0.18039216, 0.14117648, 0.47058824)

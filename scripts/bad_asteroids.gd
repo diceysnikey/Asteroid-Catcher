@@ -5,8 +5,14 @@ const outOfViewPadding = 32
 var triggeredMouth = false
 var toggleProcess = false
 
+func _check_color_blindness() -> void:
+	if BlindnessToggle.colorBlindness:
+		$Sprite2D.texture = preload("res://textures_and_audios/badasteroid_blindness.png")
+	else:
+		$Sprite2D.texture = preload("res://textures_and_audios/badAsteroid.png")
+
 func _ready() -> void:
-	pass
+	_check_color_blindness()
 
 func _process(delta: float) -> void:
 	if toggleProcess:
