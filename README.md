@@ -11,3 +11,8 @@ To raise your score, catch green asteroids while dodging the red ones! Use the s
 
 ## How to run:
 Download the .exe for Windows, or the x86_64 executable for Linux. Simply run it to start the game.
+
+## Post-Release Note:
+I found the original scratch game I made, that this game was based on! 
+Between this and Asteroid Catcher, i basically didn't make single game.
+https://scratch.mit.edu/projects/816912852/
