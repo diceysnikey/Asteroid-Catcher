@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Asteroid Catcher"
 run/main_scene="uid://d2wgydtrq0adv"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://c3p7ychnumqbc"
 
 [autoload]
@@ -20,9 +24,9 @@ config/icon="uid://c3p7ychnumqbc"
 Signalbus="*res://scripts/signalbus.gd"
 HighscoreManager="*res://scripts/highscore_manager.gd"
 ElapsedTimer="*res://scripts/elapsed_timer.gd"
-BoostSystem="*res://scripts/boost_system.gd"
-Audio="*res://scenes/audio.tscn"
-BlindnessToggle="*res://scripts/blindnessToggle.gd"
+Spritehandler="*uid://dq0c0mxsrgdjo"
+Optionshandler="*uid://byj6gyx77rkio"
+Audiohandler="*uid://ddod78ylbup4"
 
 [display]
 
@@ -31,7 +35,7 @@ window/vsync/vsync_mode=2
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 

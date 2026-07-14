@@ -34,8 +34,8 @@ func _spawn_asteroid():
 		SpawnPosition.y = randi_range(padding_y, (int(get_viewport_rect().size.y) - padding_y))
 		asteroid.position = SpawnPosition
 		asteroid.visible = true
-		asteroid.toggleProcess = true
-		asteroid.triggeredMouth = false
+		asteroid.should_process = true
+		asteroid.can_be_catched = false
 		break
 
 func _spawn_bad_asteroid():
@@ -45,13 +45,13 @@ func _spawn_bad_asteroid():
 		SpawnPosition.y = randi_range(padding_y, (int(get_viewport_rect().size.y) - padding_y))
 		badAsteroid.position = SpawnPosition
 		badAsteroid.visible = true
-		badAsteroid.toggleProcess = true
+		badAsteroid.should_process = true
 		badAsteroid.speed = 200
 		break
 	
 func _return_asteroid_to_pool(asteroid):
 	asteroid.visible = false
-	asteroid.toggleProcess = false
+	asteroid.should_process = false
 	asteroid.position.y = get_viewport_rect().size.y * 2
 	
 func _ready() -> void:

@@ -21,21 +21,21 @@ func _change_highscore_label() -> void:
 	$HighScoreText/Label.text = ("Highscore: " + str(HighscoreManager.highscore))
 	
 func _toggle_color_blindness() -> void:
-	Signalbus.toggle_blindness.emit()
+	Signalbus.toggle_color_blindness_option.emit()
 	_set_color_blindness_button()
 
 func _set_color_blindness_button() -> void:
-	if BlindnessToggle.colorBlindness:
+	if Optionshandler.colorblindness_option_enabled:
 		$ColorBlindnessToggle/ColorRect.color = Color.from_rgba8(84, 193, 125, 120)
 	else:
 		$ColorBlindnessToggle/ColorRect.color = Color.from_rgba8(130, 46, 36, 120)
 		
-func _toggle_music() -> void:
-	Signalbus.toggle_music.emit()
+func _music_toggle_button_pressed() -> void:
+	Signalbus.toggle_music_option.emit()
 	_set_music_button()
 
 func _set_music_button() -> void:
-	if Audio.musicOn:
+	if Optionshandler.music_option_enabled:
 		$MuteMusicToggle/ColorRect.color = Color.from_rgba8(84, 193, 125, 120)
 	else:
 		$MuteMusicToggle/ColorRect.color = Color.from_rgba8(130, 46, 36, 120)
@@ -48,7 +48,7 @@ func _ready() -> void:
 	$ResetHighscore/Button.pressed.connect(_reset_highscore)
 	$TutorialButton/Button.pressed.connect(_enter_tutorial)
 	$ColorBlindnessToggle/Button.pressed.connect(_toggle_color_blindness)
-	$MuteMusicToggle/Button.pressed.connect(_toggle_music)
+	$MuteMusicToggle/Button.pressed.connect(_music_toggle_button_pressed)
 	_change_highscore_label()
 	_set_color_blindness_button()
 	_set_music_button()

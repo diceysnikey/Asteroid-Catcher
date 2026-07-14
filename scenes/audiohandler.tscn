@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ddod78ylbup4"]
+
+[ext_resource type="Script" uid="uid://blmopwogolsc2" path="res://scripts/audiohandler.gd" id="1_vul8i"]
+[ext_resource type="AudioStream" uid="uid://c8npykcqctv0s" path="res://textures_and_audios/Eat1.wav" id="2_0kd47"]
+[ext_resource type="AudioStream" uid="uid://cq08mpwfi3c4i" path="res://textures_and_audios/Eat2.wav" id="3_3icsu"]
+[ext_resource type="AudioStream" uid="uid://cis6iur1bu2tm" path="res://textures_and_audios/Eat3.wav" id="4_4cyod"]
+[ext_resource type="AudioStream" uid="uid://gtr71jtmyfvq" path="res://textures_and_audios/Death.wav" id="5_uhnij"]
+[ext_resource type="AudioStream" uid="uid://olbn2hgdrshx" path="res://textures_and_audios/Select.wav" id="6_8x6jx"]
+[ext_resource type="AudioStream" uid="uid://ddn1jyi0jn6y7" path="res://textures_and_audios/asteroid_idle.ogg" id="7_uk4mw"]
+[ext_resource type="AudioStream" uid="uid://md0uwpuxwev4" path="res://textures_and_audios/asteroid_start.ogg" id="8_ud7hd"]
+[ext_resource type="AudioStream" uid="uid://du0fj0q1gnrkk" path="res://textures_and_audios/asteroid_loop.ogg" id="9_7ihse"]
+
+[node name="Audiohandler" type="Node" unique_id=1470214679]
+process_mode = 3
+script = ExtResource("1_vul8i")
+
+[node name="Eat1" type="AudioStreamPlayer" parent="." unique_id=544095225]
+stream = ExtResource("2_0kd47")
+
+[node name="Eat2" type="AudioStreamPlayer" parent="." unique_id=598966911]
+stream = ExtResource("3_3icsu")
+
+[node name="Eat3" type="AudioStreamPlayer" parent="." unique_id=1438619554]
+stream = ExtResource("4_4cyod")
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=1737622273]
+stream = ExtResource("5_uhnij")
+
+[node name="Select" type="AudioStreamPlayer" parent="." unique_id=2053730100]
+stream = ExtResource("6_8x6jx")
+
+[node name="Asteroid_Idle" type="AudioStreamPlayer" parent="." unique_id=1251977986]
+stream = ExtResource("7_uk4mw")
+volume_db = -7.0
+
+[node name="Asteroid_Start" type="AudioStreamPlayer" parent="." unique_id=1721227390]
+stream = ExtResource("8_ud7hd")
+volume_db = -7.0
+
+[node name="Asteroid_Loop" type="AudioStreamPlayer" parent="." unique_id=609869771]
+stream = ExtResource("9_7ihse")
+volume_db = -7.0

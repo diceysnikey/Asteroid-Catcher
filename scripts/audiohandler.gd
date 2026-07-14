@@ -1,17 +1,16 @@
 extends Node
 
-var token = 0
-var musicOn = true
+var sound_randomizer_token = 0
 
 func _play_eat_sound() -> void:
-	match token:
+	match sound_randomizer_token:
 		0:
 			$Eat1.play()
 		1:
 			$Eat2.play()
 		2:
 			$Eat3.play()
-	token = randi_range(0, 2)
+	sound_randomizer_token = randi_range(0, 2)
 	
 func _play_death_sound() -> void:
 	$Death.play()
@@ -22,25 +21,23 @@ func _play_select_sound() -> void:
 func _play_idle_music() -> void:
 	$Asteroid_Start.stop()
 	$Asteroid_Loop.stop()
-	if not $Asteroid_Idle.playing and musicOn:
+	if not $Asteroid_Idle.playing and Optionshandler.music_option_enabled:
 		$Asteroid_Idle.play()
 	
 func _play_start_music() -> void:
 	$Asteroid_Idle.stop()
-	if musicOn:
+	if Optionshandler.music_option_enabled:
 		$Asteroid_Start.play()
 	
 func _play_main_music() -> void:
-	if musicOn:
+	if Optionshandler.music_option_enabled:
 		$Asteroid_Loop.play()
 	
 func _toggle_music() -> void:
 	if $Asteroid_Idle.playing:
 		$Asteroid_Idle.stop()
-		musicOn = false
 	else:
 		$Asteroid_Idle.play()
-		musicOn = true
 
 func _ready() -> void:
 	Signalbus.play_eat_sound.connect(_play_eat_sound)
@@ -49,5 +46,5 @@ func _ready() -> void:
 	Signalbus.play_idle_music.connect(_play_idle_music)
 	Signalbus.play_start_music.connect(_play_start_music)
 	Signalbus.game_over.connect(_play_idle_music)
-	Signalbus.toggle_music.connect(_toggle_music)
+	Signalbus.toggle_music_option.connect(_toggle_music)
 	$Asteroid_Start.finished.connect(_play_main_music)

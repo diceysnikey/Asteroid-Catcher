@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dskdyxb8jxgsp"]
+[gd_scene format=3 uid="uid://dskdyxb8jxgsp"]
 
 [ext_resource type="Script" uid="uid://cmrodddmskhsq" path="res://scripts/player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://kbdjwlvoouje" path="res://textures_and_audios/diceboy1.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://brs7u31xw2jfd" path="res://textures_and_audios/diceboy2.png" id="3_0hol4"]
-[ext_resource type="FontFile" uid="uid://dc5qmu3hkmfvw" path="res://textures_and_audios/MR ROBOT.ttf" id="4_mdl7e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3li8b"]
 animations = [{
@@ -11,7 +10,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_epypp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"closed",
 "speed": 5.0
 }, {
@@ -19,7 +18,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_0hol4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"open",
 "speed": 5.0
 }]
@@ -42,80 +41,47 @@ size = Vector2(167, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3li8b"]
 size = Vector2(109, 109)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu4a1"]
-bg_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdl7e"]
-bg_color = Color(0.32941177, 0.75686276, 0.49019608, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
-border_blend = true
-
-[sub_resource type="Theme" id="Theme_70d11"]
-ProgressBar/colors/font_color = Color(0.32941177, 0.75686276, 0.49019608, 1)
-ProgressBar/colors/font_outline_color = Color(0.05490196, 0.4117647, 0.18039216, 1)
-ProgressBar/constants/outline_size = 5
-ProgressBar/fonts/font = ExtResource("4_mdl7e")
-ProgressBar/styles/background = SubResource("StyleBoxFlat_qu4a1")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_mdl7e")
-
-[node name="PlayerBody" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1844633006]
 process_mode = 1
 script = ExtResource("1_0e48y")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1829300795]
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_3li8b")
 animation = &"closed"
 
-[node name="WallCollider" type="CollisionShape2D" parent="."]
+[node name="WallCollider" type="CollisionShape2D" parent="." unique_id=843757987]
 shape = SubResource("RectangleShape2D_mdl7e")
 
-[node name="OuterCollision" type="Area2D" parent="."]
+[node name="OuterCollision" type="Area2D" parent="." unique_id=1496001993]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterCollision" unique_id=1883102467]
 position = Vector2(-92, 0)
 shape = SubResource("RectangleShape2D_qu4a1")
 debug_color = Color(0.9019608, 0, 0.14509805, 0.41960785)
 
-[node name="InnerCollision" type="Area2D" parent="."]
+[node name="InnerCollision" type="Area2D" parent="." unique_id=177175320]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InnerCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InnerCollision" unique_id=1719786281]
 position = Vector2(26, 0)
 shape = SubResource("RectangleShape2D_70d11")
 debug_color = Color(0, 0.8352941, 0, 0.41960785)
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1864846651]
 
-[node name="CollisionWallUp" type="CollisionShape2D" parent="Walls"]
+[node name="CollisionWallUp" type="CollisionShape2D" parent="Walls" unique_id=265804303]
 position = Vector2(1088.5, -10)
 shape = SubResource("RectangleShape2D_cw2d6")
 
-[node name="CollisionWallDown" type="CollisionShape2D" parent="Walls"]
+[node name="CollisionWallDown" type="CollisionShape2D" parent="Walls" unique_id=2140051013]
 position = Vector2(1074.5, 658)
 shape = SubResource("RectangleShape2D_khinc")
 
-[node name="BadCollision" type="Area2D" parent="."]
+[node name="BadCollision" type="Area2D" parent="." unique_id=633067826]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BadCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BadCollision" unique_id=297892777]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_3li8b")
 debug_color = Color(0.92333925, 5.063355e-05, 0.6860589, 0.41960785)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 372.0
-offset_top = 624.0
-offset_right = 765.0
-offset_bottom = 648.0
-theme = SubResource("Theme_70d11")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1246842462]

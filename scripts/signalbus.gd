@@ -14,8 +14,8 @@ signal playbutton_pressed()
 signal reset_highscore()
 signal exit_game()
 signal back_to_menu()
-signal toggle_blindness()
-signal toggle_music()
+signal toggle_color_blindness_option()
+signal toggle_music_option()
 
 # Audio
 signal play_eat_sound()
@@ -23,6 +23,9 @@ signal play_death_sound()
 signal play_select_sound()
 signal play_idle_music()
 signal play_start_music()
+
+# Sprites
+signal change_player_sprite_mouth(state: String)
 
 # Tutorial
 signal enter_tutorial()
@@ -34,4 +37,7 @@ signal tutorial_dodge_failed()
 signal start_spawn_timer()
 signal start_elapsed_timer()
 signal increase_difficulty()
-signal start_boost_process()
+
+func _asteroid_in_player_outer_collision():
+	change_player_sprite_mouth.emit("open")
+	

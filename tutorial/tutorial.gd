@@ -3,12 +3,10 @@ extends Node2D
 func _show_move_keys() -> void:
 	$UpIcon.visible = true
 	$DownIcon.visible = true
-	$BoostIcon.visible = true
 	$FullscreenIcon.visible = true
 	await get_tree().create_timer(4.5).timeout
 	$UpIcon.visible = false
 	$DownIcon.visible = false
-	$BoostIcon.visible = false
 	$FullscreenIcon.visible = false
 	
 func _collect_asteroid() -> void:
@@ -25,7 +23,7 @@ func _dodge_asteroid() -> void:
 	
 func _dodge_failed() -> void:
 	$DodgeFailOverlay.visible = true
-	Audio._play_death_sound()
+	Audiohandler._play_death_sound()
 	get_tree().paused = true
 	await get_tree().create_timer(1).timeout
 	get_tree().paused = false
