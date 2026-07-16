@@ -39,3 +39,5 @@ func _process(delta: float) -> void:
 		recalculate_asteroid_spawn_times()
 	else:
 		difficulty_scale_multiplier = 1.0
+	if $AsteroidTimer.wait_time == min_asteroid_spawn_time:
+		round_timer_on = false
