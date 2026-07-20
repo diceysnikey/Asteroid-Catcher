@@ -1,3 +1,5 @@
+#####  Required Notice: Copyright diceworks
+
 ## Info:
 An endless arcade-like game made in Godot 4 for Hackclub's Flavortown. 
 To raise your score, catch green asteroids while dodging the red ones! Use the spacebar for a boost
