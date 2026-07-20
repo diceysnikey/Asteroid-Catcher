@@ -19,6 +19,13 @@ func _show_game_over_screen() -> void:
 func _exit_game() -> void:
 	get_tree().quit()
 	
+func _restart_round() -> void:
+	for child in get_children():
+		remove_child(child)
+		child.queue_free()
+	get_tree().paused = false
+	Signalbus.round_started.emit()
+	
 func _setup_menu() -> void:
 	for child in get_children():
 		remove_child(child)

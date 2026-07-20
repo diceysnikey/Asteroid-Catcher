@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p85fqpfkcqw"]
+[gd_scene format=3 uid="uid://p85fqpfkcqw"]
 
 [ext_resource type="Script" uid="uid://dwiw58e2dmh3" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
 [ext_resource type="Texture2D" uid="uid://co55k4t5pkubb" path="res://textures_and_audios/white.png" id="2_61w2s"]
@@ -34,7 +34,7 @@ font_color = Color(0.87058824, 0.4862745, 0.4392157, 1)
 outline_size = 15
 outline_color = Color(0.50980395, 0.18039216, 0.14117648, 1)
 
-[node name="GameOverScreen" type="Control"]
+[node name="GameOverScreen" type="Control" unique_id=751259693]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -44,9 +44,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwahs")
 
-[node name="GameOverText" type="CanvasLayer" parent="."]
+[node name="GameOverText" type="CanvasLayer" parent="." unique_id=1429640385]
 
-[node name="Label" type="Label" parent="GameOverText"]
+[node name="Label" type="Label" parent="GameOverText" unique_id=1302915331]
 offset_left = 320.0
 offset_top = 64.0
 offset_right = 832.0
@@ -56,33 +56,33 @@ label_settings = SubResource("LabelSettings_61w2s")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HighscoreText" type="CanvasLayer" parent="."]
+[node name="HighscoreText" type="CanvasLayer" parent="." unique_id=1449425865]
 
-[node name="Label" type="Label" parent="HighscoreText"]
+[node name="Label" type="Label" parent="HighscoreText" unique_id=142766389]
 offset_left = 448.0
-offset_top = 368.0
+offset_top = 240.0
 offset_right = 704.0
-offset_bottom = 408.0
+offset_bottom = 280.0
 label_settings = SubResource("LabelSettings_iwahs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=259580233]
 modulate = Color(1, 1, 1, 0.24705882)
 self_modulate = Color(0.32941177, 0.75686276, 0.49019608, 0.47058824)
 scale = Vector2(1152, 648)
 texture = ExtResource("2_61w2s")
 
-[node name="MenuButton" type="CanvasLayer" parent="."]
+[node name="MenuButton" type="CanvasLayer" parent="." unique_id=1451168250]
 
-[node name="Button" type="Button" parent="MenuButton"]
+[node name="Button" type="Button" parent="MenuButton" unique_id=1916515695]
 offset_left = 104.0
 offset_top = 352.0
 offset_right = 360.0
 offset_bottom = 416.0
 theme = ExtResource("4_xx0b3")
 
-[node name="Label" type="Label" parent="MenuButton"]
+[node name="Label" type="Label" parent="MenuButton" unique_id=2114483612]
 offset_left = 104.0
 offset_top = 352.0
 offset_right = 360.0
@@ -92,21 +92,40 @@ label_settings = SubResource("LabelSettings_nh6my")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ExitButton" type="CanvasLayer" parent="."]
+[node name="ExitButton" type="CanvasLayer" parent="." unique_id=683684481]
 
-[node name="Button" type="Button" parent="ExitButton"]
+[node name="Button" type="Button" parent="ExitButton" unique_id=153469216]
 offset_left = 800.0
 offset_top = 352.0
 offset_right = 1056.0
 offset_bottom = 416.0
 theme = ExtResource("5_5i0af")
 
-[node name="Label" type="Label" parent="ExitButton"]
+[node name="Label" type="Label" parent="ExitButton" unique_id=1683511162]
 offset_left = 800.0
 offset_top = 352.0
 offset_right = 1056.0
 offset_bottom = 416.0
 text = "Exit"
 label_settings = SubResource("LabelSettings_4tlw3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="CanvasLayer" parent="." unique_id=1357248877]
+
+[node name="Button" type="Button" parent="RestartButton" unique_id=1657609632]
+offset_left = 448.0
+offset_top = 352.0
+offset_right = 704.0
+offset_bottom = 416.0
+theme = ExtResource("4_xx0b3")
+
+[node name="Label" type="Label" parent="RestartButton" unique_id=1367587525]
+offset_left = 448.0
+offset_top = 352.0
+offset_right = 704.0
+offset_bottom = 416.0
+text = "restart"
+label_settings = SubResource("LabelSettings_nh6my")
 horizontal_alignment = 1
 vertical_alignment = 1
